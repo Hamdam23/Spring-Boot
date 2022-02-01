@@ -22,7 +22,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@NonNull @Valid @RequestBody Person person){
+    public void addPerson(@Valid @NonNull @RequestBody Person person){
         personService.addPerson(person);
     }
 
@@ -43,7 +43,7 @@ public class PersonController {
     }
 
     @PutMapping(path = ("{id}"))
-    public void updatePerson(@PathVariable("id") UUID id, @NonNull @Valid @RequestBody Person personToUpdate){
+    public void updatePerson(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Person personToUpdate){
         personService.updatePerson(id, personToUpdate);
     }
 }
